@@ -15,6 +15,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/animate.css/source/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -22,10 +23,12 @@
   </head>
   <body>
 
-    <nav class="navbar">
+    <nav id="top" class="navbar navbar-inverse fixed">
       <div class="container">
-        <h1 class="brand">Cisco</h1>
-        <p class="text">#internetofeverything</p>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#top">Cisco</a>
+          <p class="navbar-text"><span>Internet of Everything</span> #IoE</p>
+        </div>
       </div>
     </nav>
     <div id="scenarios" class="scenarios">
@@ -35,6 +38,7 @@
         <a href="#scenario-3">Section 3</a>
         <a href="#scenario-4">Section 4</a>
         <a href="#scenario-5">Section 5</a>
+        <a href="#scenario-5">Section 6</a>
       </nav>
       
       <!-- Begin Senario One -->
@@ -42,14 +46,16 @@
         <div class="container">
           <div class="content">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-9 col-lg-8">
                <h2>The Internet of Everything is creating tremendous opportunities and challenges for organizations. Follow the journey and see how you can capture your share of the value of connecting people, process, data, and things.</h2>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6 secondary-content">
-                <img class="align-left img" src="images/robert-square.jpg">
-                <p class="lead">Robert is the CIO of a successful software company offering solutions for retailers such as business analysis, inventory systems, field service application, and mobile application to assist shoppers.</p>
+            <div class="row secondary-content">
+              <div class="col-md-1">
+                <img class="img-responsive img-circle" src="images/robert-square.jpg">
+              </div>
+              <div class="col-md-5">
+                <p class="lead text-muted">Robert is the CIO of a successful software company offering solutions for retailers such as business analysis, inventory systems, field service application, and mobile application to assist shoppers.</p>
               </div>
             </div>
             <!-- <a class="pure-button" id="scenario-link" href="#scenario-2">Do the thing</a> -->
@@ -89,6 +95,7 @@
       <section id="scenario-3"></section>
       <section id="scenario-4"></section>
       <section id="scenario-5"></section>
+      <section id="scenario-6"></section>
     </div>
 
     <!-- build:js scripts/vendor.js -->

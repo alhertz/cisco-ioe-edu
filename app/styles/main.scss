@@ -1,7 +1,7 @@
+$navbar-height: 84px;
 @import 'sass-bootstrap/lib/bootstrap';
 
 @import "compass";
-// @import "animations";
 
 /* Set all parents to full height */
 header,
@@ -10,153 +10,144 @@ html, body,
 .scenarios section { 
   height: 100%; 
 }
-h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5, .lead {
   font-weight: 300;
   font-style: italic;
 }
-.lead {
-  font-style: italic;
-}
-/* The nav is fixed on the right side  and we center it by translating it 50% 
-(we don't know it's height so we can't use the negative margin trick) */
-.scenarios > nav {
-  position: fixed;
-  z-index: 9999;
-  right: 100px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.scenarios > nav a {
-  display: block;
-  position: relative;
-  color: transparent;
-  height: 20px;
-}
-.scenarios > nav a:after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid #CCC;
-}
-.scenarios > nav a:hover:after {
-  background: #CCC;
-
-}
-.scenarios > nav a.scenario-current:after {
-  background: #CCC;
-}
-/* background-attachment does the trick */
-.scenarios section {
-  position: relative;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: #000;
-  .pure-g {
-    padding: 2.0em;
-  }
-}
 .navbar {
-  width: 100%;
-  top: 0;
+  border-radius: 0;
+  border: none;
   position: fixed;
   z-index: 9;
-  background: #000;
-  color: #FFF;
-  height: $navbar-height;
-  .text {
-    display: none;
+  width: 100%;
+  margin: 0;
+  &.navbar-inverse {
+    background: #000;
   }
-  .brand {
-    background: url('../images/cisco-logo.png') no-repeat;
-    background-size: 100% auto;
-    width: 80px;
-    height: 42px;
-    text-indent: -9999px;
-    &:hover {
-      opacity: .9;
-      cursor: pointer;
+  & > .container  {
+    .navbar-brand {
+      background: url('../images/cisco-logo.png') no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
+      width: 80px;
+      height: $navbar-height;
+      text-indent: -9999px;
+      margin-left: 0;
+      &:hover {
+        opacity: .9;
+        cursor: pointer;
+      }
+      @media (max-width: $screen-xs-min) {
+        width: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+  }
+  .navbar-text {
+    margin-bottom: 0;
+    margin-top: 32px;
+    @media (max-width: $screen-xs-min) {
+      float: right;
+      margin-right: 15px;
     }
   }
 }
-.wrapper {
-  // height: 380px;
-  // position: absolute;
-  // top: 50%;
-  // margin-top: -190px;
-  // width: 1024px;
-}
-.border {
-  background: #c9da2a;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYzlkYTJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjM2ViNDRhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOTA4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  background: -moz-linear-gradient(45deg, #c9da2a 0%, #3eb44a 50%, #00908c 100%);
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #c9da2a), color-stop(50%, #3eb44a), color-stop(100%, #00908c));
-  background: -webkit-linear-gradient(45deg, #c9da2a 0%, #3eb44a 50%, #00908c 100%);  background: -o-linear-gradient(45deg, #c9da2a 0%, #3eb44a 50%, #00908c 100%);
-  background: -ms-linear-gradient(45deg, #c9da2a 0%, #3eb44a 50%, #00908c 100%);
-  background: linear-gradient(45deg, #c9da2a 0%, #3eb44a 50%, #00908c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); 
-  height: 20px;
-  width: 100%;
-}
-.lead {
-  font-size: 1.5em;
-  // color: #999;
-}
-.box {
-  padding: 1.5em;
-}
-.button-primary {
-  padding: 20px;
-  background: #FFF;
-  color: #c9da2a;
-  border: 2px solid #c9da2a;
-  font-weight: bold;
-  &:hover {
-    color: #FFF;
-    background: #c9da2a;
+.scenarios {
+  // Navigation
+  & > nav {
+    position: fixed;
+    z-index: 9999;
+    right: 100px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    a {
+      display: block;
+      position: relative;
+      color: transparent;
+      height: 20px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #CCC;
+      }
+      &:hover:after,
+      &.scenario-current:after {
+        background: #CCC;
+      }
+    }
+    // Position menu at bottom of screen on small devices
+    @media (max-width: $screen-sm-min) {
+      right: 0;
+      bottom: 0;
+      top: 93%;
+      background: #FFF;
+      width: 100%;
+      height: 7%;
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+      a {
+        height: 100%;
+        display: inline-block;
+        width: 16%;
+        &:after {
+          left: 50%;
+          top: 50%;
+          margin-top: -5px;
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+  // Global Section Styles
+  section {
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
   }
 }
-section .transition-in {
-  visibility: hidden;
-}
+
+
 #scenario-1 {
   color: #FFF; 
-  h2 {
-    font-size: 2em;
-  }
-  .border {
-    position: absolute;
-    bottom: 0;
-    height: 5px;
-  }
-  .content {
-    display: none;
-  }
+  padding-top: $navbar-height;
+  // Control appearance in main.js
+  .content,
   .secondary-content {
     display: none;
   }
-  img.align-left {
-    border-radius: 50%;
-    height: 100px;
-    float: left;
-    margin: .5em 1.0em 1.0em 0;
-    // display: none;
-  }
-  .lead {
-    font-size: 1.25em;
-    color: #666;
-  }
   .content {
-    height: 400px;
     top: 50%;
     position:absolute;
     margin-top: -200px;
+    .secondary-content {
+      padding-top: 2.0em;
+    }
+  }
+  @media (max-width: $screen-sm-min) {
+    .content {
+      position: relative;
+      margin: 0;
+      text-align: center;
+      h2 {
+        font-size: 1.5em;
+      }
+      .img-circle {
+        margin: 0 auto;
+        border: 3px solid $body-bg;
+      }
+    }
   }
 }
 
@@ -197,8 +188,6 @@ section .transition-in {
       padding: 2%;
       border: 1px solid #EEE;
       background: #FFF;
-      // -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
-      // box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
     }
   }
   &:after {
@@ -221,6 +210,8 @@ section .transition-in {
   background: #FFF;
 }
 #scenario-4 {
+  background: #FFF;
 }
 #scenario-5 {
+  background: #FFF;
 }
