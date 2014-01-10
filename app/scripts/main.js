@@ -1,6 +1,6 @@
 $(function(){
   $('#scenario-2').waypoint(function(direction) {
-    $('.transition-in').addClass("slideUp");
+    $( ".fadeIn" ).fadeIn( 2500 );
   });
 });
 $(document).ready(function(){
