@@ -1,19 +1,43 @@
 $navbar-height: 84px;
+$brand-primary: #00908c;
 @import 'sass-bootstrap/lib/bootstrap';
 
 @import "compass";
+@import "_animations.css";
 
 /* Set all parents to full height */
+
 header,
 html, body,
 .scenarios,
 .scenarios section { 
   height: 100%; 
+  font-weight: 400;
+}
+@media (max-width: $screen-sm-min) {
+  .scenarios section {
+    height: auto;
+  }
 }
 h1,h2,h3,h4,h5, .lead {
   font-weight: 300;
-  font-style: italic;
 }
+.btn-primary {
+  font-weight: 300;
+  border: none;
+  background-color: #c9da2a; // Old browsers
+  @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+}
+// :hover {
+//   -webkit-transition: all 500ms ease-in;
+//   -moz-transition: all 500ms ease-in;
+//   -ms-transition: all 500ms ease-in;
+//   -o-transition: all 500ms ease-in;
+//   transition: all 500ms ease-in;
+// }
 .navbar {
   border-radius: 0;
   border: none;
@@ -118,7 +142,7 @@ h1,h2,h3,h4,h5, .lead {
     background-attachment: fixed;
     background-color: #000;
     .fadeIn {
-      display: none;
+      // display: none;
     }
   }
 }
@@ -127,6 +151,11 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
+  h2 {
+    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   // Control appearance in main.js
   .content,
   .secondary-content {
@@ -154,38 +183,107 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
   }
+  @media (max-width: $screen-xs-min) {
+    img {
+      display: none;
+    }
+  }
 }
 
 #scenario-2 {
-  background: url('../images/section-2-bg.jpg') no-repeat;
+  // background: url('../images/section-2-bg.jpg') no-repeat;
   background-size: 100% auto;
   background-position: bottom;
+  background-color: #FFF;
   .header {
     border-top: $navbar-height solid #000;
     color: #FFF;
     padding: 15px 0;
+    margin-bottom: 1.0em;
     background-color: #c9da2a; // Old browsers
     @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
     // IE9 SVG, needs conditional override of 'filter' to 'none'
     $experimental-support-for-svg: true;
     @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
     img {
-      width: 60%;
-      margin: 0 auto;
       margin-top: 20px;
+      border: 5px solid $body-bg;
+      @include box-shadow(rgba(black, .2) 0px 0px 10px);
+    }
+    @media (max-width: $screen-xs-min) {
+      text-align: center;
+      img {
+        margin: 0 auto;
+        margin-top: -100px;
+      }
     }
   }
   .content {
     height: 380px;
     position: absolute;
     top: 50%;
-    margin-top: -100px;
-    width: 1024px;
-    img {
-      width: 96%;
-      padding: 2%;
-      border: 1px solid #EEE;
-      background: #FFF;
+    margin-top: -40px;
+    width: 100%;
+    p.text-gradient {
+      @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.text-muted {
+      margin-top: 1.0em;
+      color: #999;
+    }
+    @media (max-width: $screen-sm-min) {
+      position: relative;
+      margin: 0;
+      top: 0;
+      text-align: center;
+      height: auto;
+    }
+  }
+  .technology {
+    display: none;
+    background: #FFF;
+    z-index: 9;
+    position: relative;
+    // We can set the height to whatever we want really since overflow is hidden on desktop
+    height: 100%;
+    @media (max-width: $screen-sm-min) {
+      position: fixed;
+      top: 0;
+      height: 100%;
+      overflow: scroll;
+    }
+    h3 {
+      color: #00908c;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        border-bottom: 1px solid #f5f5f5;
+        a{
+          line-height: 2.0em;
+          display: block;
+          padding-left: 5px;
+          &:hover {
+            color: $body-bg;
+            background: $brand-primary;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .close {
+      // visibility: hidden;
+      background: #000;
+      opacity: 1.0;
+      color: #FFF;
+      padding: 20px 5px 5px 5px;
+      margin-top: -15px;
+      position: absolute;
+      right: 0;
+      margin-right: 20px;
     }
   }
 }
