@@ -2,10 +2,27 @@ $navbar-height: 84px;
 $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/bootstrap';
 
-@import "compass";
+@mixin gradient-bg {
+  background: $brand-primary; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYzlkYTJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjM2ViNDRhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOTA4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(45deg,  #c9da2a 0%, #3eb44a 50%, #00908c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#c9da2a), color-stop(50%,#3eb44a), color-stop(100%,#00908c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin box-shadow {
+  -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,.3);
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.3);
+}
 @import "_animations.css";
-
-/* Set all parents to full height */
 
 header,
 html, body,
@@ -14,45 +31,45 @@ html, body,
   height: 100%; 
   font-weight: 400;
 }
+body {
+  line-height: 1.5;
+}
+h1,h2,h3,h4,h5, .lead {
+  font-weight: 300;
+}
 .img-responsive {
   width: 100%;
 }
 .img-thumbnail {
   border-radius: 0;
 }
-body {
-  line-height: 1.5;
-}
-@media (max-width: $screen-sm-min) {
-  .scenarios section {
-    height: auto;
-  }
-}
-h1,h2,h3,h4,h5, .lead {
-  font-weight: 300;
-}
 .btn-primary {
   font-weight: 300;
   border: none;
-  background-color: $brand-primary; // Old browsers
-  @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
-  // IE9 SVG, needs conditional override of 'filter' to 'none'
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  &:hover {
+    //TODO Include Transitions
+  }
 }
-.btn:hover {
-  @include transition-property(all);
-  @include transition-duration(1s);
-  @include transition-timing-function(ease-in);
+.btn-default {
+  background: transparent;
+  border: 3px solid #FFF;
+  color: #FFF;
+  margin-top: 1.0em;
+  &:hover {
+    border-color: $body-bg;
+    color: $body-bg;
+    background: transparent;
+    opacity: .7;
+    //TODO Include Transitions
+  }
 }
+
 .text-gradient {
-  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include gradient-bg();
+  @include text-gradient();
 }
-.btn-primary {
-  background-image: none;
-}
+
+
 .navbar {
   border-radius: 0;
   border: none;
@@ -124,7 +141,7 @@ h1,h2,h3,h4,h5, .lead {
     }
     // Position menu at bottom of screen on small devices
     @media (max-width: $screen-sm-min) {
-      @include box-shadow(rgba(black, .2) 0px 0px 10px);
+      @include box-shadow();
       right: 0;
       bottom: 0;
       top: 93%;
@@ -148,41 +165,39 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
   }
-  // Global Section Styles
   section {
     position: relative;
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #000;
-    .fadeIn {
-      // display: none;
+    @media (max-width: $screen-sm-min) {
+      height: auto;
     }
   }
 }
-
-
-// Scenario One
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
-  h2 {
-    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  // Control appearance in main.js
+  @include gradient-bg();
   .content,
   .secondary-content {
     display: none;
   }
   .content {
-    top: 50%;
-    position: absolute;
-    margin-top: -200px;
+    // top: 50%;
+    // position: absolute;
+    // margin-top: -200px;
+    padding-top: 4.0em;
     .secondary-content {
       padding-top: 2.0em;
+      .text-muted {
+        color: $body-bg;
+        opacity: .7;
+      }
+      .btn-default {
+        margin-bottom: 170px;
+      }
     }
   }
   @media (max-width: $screen-sm-min) {
@@ -210,69 +225,54 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-4,
 #scenario-5,
 #scenario-6 {
-  // background: url('../images/section-2-bg.jpg') no-repeat;
-  background-size: 100% auto;
-  background-position: bottom;
-  background-color: #FFF;
-  .header {
-    img {
-      margin-top: 20px;
-      border: 5px solid $body-bg;
-      @include box-shadow(rgba(black, .2) 0px 0px 10px);
-    }
-    @media (max-width: $screen-xs-min) {
-      text-align: center;
-      img {
-        margin: 0 auto;
-        margin-top: -100px;
-      }
-    }
-  }
   .content {
-    padding: 2.0em 0;
-    // height: 380px;
-    // position: absolute;
-    // top: 50%;
-    // margin-top: -40px;
-    // width: 100%;
     display: none;
-    p.text-muted {
+    @media (max-width: $screen-sm-min) {
+      display: block;
+    }
+    padding: 4.0em 0 0 0;
+    border-top: $navbar-height solid #FFF;
+    .text-muted {
       color: #999;
-      border-left: 3px solid;
       margin-top: 2.0em;
       padding-left: 1.0em;
+      border-left: 3px solid;   
     }
     .img-circle {
       max-width: 80%;
       margin: 0 auto;
+      @include box-shadow();
       border: 5px solid #f5f5f5;
-      @include box-shadow(rgba(black, .2) 0px 0px 10px);
     }
     .btn-primary {
       margin-top: 1.0em;
     }
     @media (max-width: $screen-sm-min) {
-      position: relative;
       margin: 0;
-      top: 0;
+      border-top: 0;
+      position: relative;
       text-align: center;
+      padding: 40px 0 0 0;
       height: auto;
+      .img-circle {
+        margin-bottom: 20px;
+      }
+      .text-muted {
+        border: none;
+        padding: 0;
+      }
     }
   }
   .technology {
-    display: none;
+    z-index: 1;
     z-index: 9;
+    display: none;
+    padding: 4.0em 0 0 0;
+    background: transparent;
     position: relative;
-    // We can set the height to whatever we want really since overflow is hidden on desktop
-    @media (max-width: $screen-sm-min) {
-      position: fixed;
-      top: 0;
-      height: 100%;
-      overflow: scroll;
-      background: #FFF;
-    }
+    border-top: $navbar-height solid #FFF;
     h3 {
-      color: #00908c;
+      color: $brand-primary;
     }
     ul {
       list-style: none;
@@ -292,7 +292,6 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
     .close {
-      // visibility: hidden;
       background: #000;
       opacity: 1.0;
       color: #FFF;
@@ -306,71 +305,19 @@ h1,h2,h3,h4,h5, .lead {
         color: #CCC;
       }
     }
-  }
-}
-// Scenario Two
-#scenario-2 {
-  background: #FFF;
-  .header {
-    color: #FFF;
-    padding: 1.0em 0;
-    margin-bottom: 1.0em;
-    border-top: $navbar-height solid #000;
-    background-color: #c9da2a; // Old browsers
-    @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
-    // IE9 SVG, needs conditional override of 'filter' to 'none'
-    $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-  }
-  .content {
-    .lead {
-      margin-top: 3.0em;
-    }
-  }
-  @media (max-width: $screen-sm-min) {
-    .content {
-      padding: 0;
-      .lead {
-        margin-top: 0;
-      }
-      p.text-muted {
-        padding: 0;
-        border: 0;
-      }
-    }
-    .img-circle {
-      margin-top: 20px;
-      max-width: 50%;
-      margin: 0 auto;
-    }
-  }
-  .technology {}
-}
-#scenario-3,
-#scenario-4,
-#scenario-5,
-#scenario-6 {
-  background: #FFF;
-  .content {
-    border-top: $navbar-height solid #FFF;
-    padding: 4.0em 0 0 0;
-    display: block;
     @media (max-width: $screen-sm-min) {
-      padding: 40px 0 0 0;
-      border-top: 0;
-      .img-circle {
-        margin-bottom: 20px;
-      }
-      p.text-muted {
-        border: none;
-        padding: 0;
-      }
+      position: fixed;
+      top: 0;
+      height: 100%;
+      overflow: scroll;
+      background: #FFF;
     }
   }
-  .technology {
-    border-top: $navbar-height solid #FFF;
-    padding: 4.0em 0 0 0;
-    background: transparent;
-    z-index: 1;
+}
+#scenario-2 {
+  .content {
+    @media (max-width: $screen-sm-min) {
+      margin-top: -170px;
+    }
   }
 }
