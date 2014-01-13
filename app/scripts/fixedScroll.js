@@ -21,7 +21,7 @@ var cbpFixedScrollLayout = (function() {
     // the body element
     $body : $( 'html, body' ),
     // the body animation speed
-    animspeed : 2000,
+    animspeed : 1500,
     // the body animation easing (jquery easing)
     animeasing : 'easeInOutExpo'
   };
@@ -46,9 +46,9 @@ var cbpFixedScrollLayout = (function() {
     }, { offset: '-30%' } );
 
     // on window resize: the body is scrolled to the position of the current section
-    $( window ).on( 'debouncedresize', function() {
-      scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
-    } );
+    // $( window ).on( 'debouncedresize', function() {
+    //   scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
+    // } );
        
   }
 
