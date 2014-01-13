@@ -9,7 +9,7 @@ $(document).ready(function(){
 
   $( ".showTechnology" ).click(function() {
     $( ".scenarios > nav").fadeOut();
-    $( ".technology" ).fadeIn( 'slow', function() {
+    $( event.target ).closest( "li")( ".technology" ).fadeIn( 'slow', function() {
       // Animation complete
       // $('.close').delay( 500 ).addClass('slideDown');
       $( ".close" ).click(function() {

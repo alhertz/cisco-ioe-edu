@@ -163,7 +163,7 @@ h1,h2,h3,h4,h5, .lead {
   }
   .content {
     top: 50%;
-    position:absolute;
+    position: absolute;
     margin-top: -200px;
     .secondary-content {
       padding-top: 2.0em;
@@ -189,22 +189,13 @@ h1,h2,h3,h4,h5, .lead {
     }
   }
 }
-
-#scenario-2 {
+#scenario-2,
+#scenario-3 {
   // background: url('../images/section-2-bg.jpg') no-repeat;
   background-size: 100% auto;
   background-position: bottom;
   background-color: #FFF;
   .header {
-    border-top: $navbar-height solid #000;
-    color: #FFF;
-    padding: 15px 0;
-    margin-bottom: 1.0em;
-    background-color: #c9da2a; // Old browsers
-    @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
-    // IE9 SVG, needs conditional override of 'filter' to 'none'
-    $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
     img {
       margin-top: 20px;
       border: 5px solid $body-bg;
@@ -219,16 +210,12 @@ h1,h2,h3,h4,h5, .lead {
     }
   }
   .content {
-    height: 380px;
-    position: absolute;
-    top: 50%;
-    margin-top: -40px;
-    width: 100%;
-    p.text-gradient {
-      @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    padding: 2.0em 0;
+    // height: 380px;
+    // position: absolute;
+    // top: 50%;
+    // margin-top: -40px;
+    // width: 100%;
     p.text-muted {
       margin-top: 1.0em;
       color: #999;
@@ -284,15 +271,66 @@ h1,h2,h3,h4,h5, .lead {
       position: absolute;
       right: 0;
       margin-right: 20px;
+      text-shadow: none;
+      &:hover {
+        color: #CCC;
+      }
     }
   }
 }
+p.text-gradient {
+  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#scenario-2 {
+  background: #FFF;
+  .header {
+    color: #FFF;
+    padding: 1.0em 0;
+    margin-bottom: 1.0em;
+    border-top: $navbar-height solid #000;
+    background-color: #c9da2a; // Old browsers
+    @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  }
+  .content {}
+  .technology {}
+}
 #scenario-3{
   background: #FFF;
+  background: url('../images/section-2-bg.jpg') no-repeat;
+  background-position: center 300px;
+  background-size: cover;
+  .header {
+    border-top: $navbar-height solid #FFF;
+    padding: 4.0em 0;
+    // background: url('../images/section-2-bg.jpg') no-repeat;
+    // background-size: cover;
+    // background-size: 100% auto;
+    color: #FFF;
+    background-color: #c9da2a; // Old browsers
+    @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  }
+  .content {
+    // background: #FFF;
+  }
+  .technology {}
 }
 #scenario-4 {
   background: #FFF;
+  .header {}
+  .content {}
+  .technology {}
 }
 #scenario-5 {
   background: #FFF;
+  .header {}
+  .content {}
+  .technology {}
 }
