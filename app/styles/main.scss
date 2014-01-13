@@ -354,6 +354,18 @@ h1,h2,h3,h4,h5, .lead {
   .content {
     border-top: $navbar-height solid #FFF;
     padding: 4.0em 0 0 0;
+    display: block;
+    @media (max-width: $screen-sm-min) {
+      padding: 40px 0 0 0;
+      border-top: 0;
+      .img-circle {
+        margin-bottom: 20px;
+      }
+      p.text-muted {
+        border: none;
+        padding: 0;
+      }
+    }
   }
   .technology {
     border-top: $navbar-height solid #FFF;

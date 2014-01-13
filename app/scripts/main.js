@@ -17,7 +17,7 @@ $(function(){
 });
 $(document).ready(function(){
   $( "#scenario-1 .content" ).fadeIn( 2500 );
-  $( "#scenario-1 .secondary-content" ).delay( 2500 ).fadeIn( 2500 );
+  $( "#scenario-1 .secondary-content" ).delay( 500 ).fadeIn( 2500 );
 
   $( ".showTechnology" ).click(function() {
     $( ".scenarios > nav").fadeOut();
