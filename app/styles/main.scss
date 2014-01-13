@@ -14,6 +14,15 @@ html, body,
   height: 100%; 
   font-weight: 400;
 }
+.img-responsive {
+  width: 100%;
+}
+.img-thumbnail {
+  border-radius: 0;
+}
+body {
+  line-height: 1.5;
+}
 @media (max-width: $screen-sm-min) {
   .scenarios section {
     height: auto;
@@ -25,19 +34,25 @@ h1,h2,h3,h4,h5, .lead {
 .btn-primary {
   font-weight: 300;
   border: none;
-  background-color: #c9da2a; // Old browsers
+  background-color: $brand-primary; // Old browsers
   @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
   // IE9 SVG, needs conditional override of 'filter' to 'none'
   $experimental-support-for-svg: true;
   @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
 }
-// :hover {
-//   -webkit-transition: all 500ms ease-in;
-//   -moz-transition: all 500ms ease-in;
-//   -ms-transition: all 500ms ease-in;
-//   -o-transition: all 500ms ease-in;
-//   transition: all 500ms ease-in;
-// }
+.btn:hover {
+  @include transition-property(all);
+  @include transition-duration(1s);
+  @include transition-timing-function(ease-in);
+}
+.text-gradient {
+  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-primary {
+  background-image: none;
+}
 .navbar {
   border-radius: 0;
   border: none;
@@ -148,6 +163,7 @@ h1,h2,h3,h4,h5, .lead {
 }
 
 
+// Scenario One
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
@@ -190,7 +206,10 @@ h1,h2,h3,h4,h5, .lead {
   }
 }
 #scenario-2,
-#scenario-3 {
+#scenario-3,
+#scenario-4,
+#scenario-5,
+#scenario-6 {
   // background: url('../images/section-2-bg.jpg') no-repeat;
   background-size: 100% auto;
   background-position: bottom;
@@ -216,9 +235,21 @@ h1,h2,h3,h4,h5, .lead {
     // top: 50%;
     // margin-top: -40px;
     // width: 100%;
+    display: none;
     p.text-muted {
-      margin-top: 1.0em;
       color: #999;
+      border-left: 3px solid;
+      margin-top: 2.0em;
+      padding-left: 1.0em;
+    }
+    .img-circle {
+      max-width: 80%;
+      margin: 0 auto;
+      border: 5px solid #f5f5f5;
+      @include box-shadow(rgba(black, .2) 0px 0px 10px);
+    }
+    .btn-primary {
+      margin-top: 1.0em;
     }
     @media (max-width: $screen-sm-min) {
       position: relative;
@@ -230,16 +261,15 @@ h1,h2,h3,h4,h5, .lead {
   }
   .technology {
     display: none;
-    background: #FFF;
     z-index: 9;
     position: relative;
     // We can set the height to whatever we want really since overflow is hidden on desktop
-    height: 100%;
     @media (max-width: $screen-sm-min) {
       position: fixed;
       top: 0;
       height: 100%;
       overflow: scroll;
+      background: #FFF;
     }
     h3 {
       color: #00908c;
@@ -278,11 +308,7 @@ h1,h2,h3,h4,h5, .lead {
     }
   }
 }
-p.text-gradient {
-  @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+// Scenario Two
 #scenario-2 {
   background: #FFF;
   .header {
@@ -296,41 +322,43 @@ p.text-gradient {
     $experimental-support-for-svg: true;
     @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
   }
-  .content {}
-  .technology {}
-}
-#scenario-3{
-  background: #FFF;
-  background: url('../images/section-2-bg.jpg') no-repeat;
-  background-position: center 300px;
-  background-size: cover;
-  .header {
-    border-top: $navbar-height solid #FFF;
-    padding: 4.0em 0;
-    // background: url('../images/section-2-bg.jpg') no-repeat;
-    // background-size: cover;
-    // background-size: 100% auto;
-    color: #FFF;
-    background-color: #c9da2a; // Old browsers
-    @include filter-gradient(#c9da2a, #00908c, horizontal); // IE6-8
-    // IE9 SVG, needs conditional override of 'filter' to 'none'
-    $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(left, #c9da2a 0%,#3eb44a 50%,#00908c 100%));
-  }
   .content {
-    // background: #FFF;
+    .lead {
+      margin-top: 3.0em;
+    }
+  }
+  @media (max-width: $screen-sm-min) {
+    .content {
+      padding: 0;
+      .lead {
+        margin-top: 0;
+      }
+      p.text-muted {
+        padding: 0;
+        border: 0;
+      }
+    }
+    .img-circle {
+      margin-top: 20px;
+      max-width: 50%;
+      margin: 0 auto;
+    }
   }
   .technology {}
 }
-#scenario-4 {
+#scenario-3,
+#scenario-4,
+#scenario-5,
+#scenario-6 {
   background: #FFF;
-  .header {}
-  .content {}
-  .technology {}
-}
-#scenario-5 {
-  background: #FFF;
-  .header {}
-  .content {}
-  .technology {}
+  .content {
+    border-top: $navbar-height solid #FFF;
+    padding: 4.0em 0 0 0;
+  }
+  .technology {
+    border-top: $navbar-height solid #FFF;
+    padding: 4.0em 0 0 0;
+    background: transparent;
+    z-index: 1;
+  }
 }
