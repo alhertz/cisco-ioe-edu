@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -36,41 +37,27 @@
         <a href="#scenario-5">Section 6</a>
       </nav>
       <section id="scenario-1">
+        <a id="arrow"></a>
         <div class="container">
           <div class="content">
             <div class="row">
-              <div class="col-md-9 col-lg-8">
+              <div class="col-md-9 col-lg-9">
                <h2>The Internet of Everything is creating tremendous opportunities and challenges for organizations. Follow the journey and see how you can capture your share of the value of connecting people, process, data, and things.</h2>
               </div>
             </div>
             <div class="row secondary-content">
-              <!-- <div class="col-md-1 visible-sm visible-xs">
-                <img class="img-responsive img-circle" src="images/robert-square.jpg">
-              </div> -->
-              <div class="col-lg-5 col-md-6">
+              <div class="col-md-2 hidden-sm hidden-xs">
+                <img src="images/robert-square.jpg" class="img-responsive img-circle">
+              </div>
+              <div class="col-md-6">
                 <p class="lead text-muted">Robert is the CIO of a successful software company offering solutions for retailers such as business analysis, inventory systems, field service application, and mobile application to assist shoppers.</p>
-                <a class="btn btn-default btn-lg">Experience His Day</a>
+                <a class="btn btn-default" id="scenario-link">Experience his day</a>
               </div>
             </div>
           </div>
         </div>
       </section>
       <section id="scenario-2">
-        <div class="content">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-5 col-lg-6">
-                <p><img class="img-responsive img-circle" src="images/robert-square.jpg"></p>
-              </div>
-              <div class="col-md-7 col-lg-6">
-                <p class="lead text-gradient">Meet Robert. It’s 8am and he is on a conference call with the executive team in charge of the most recent blockbuster product.</p>
-                <p>They are reporting much higher than expected usage and need to bring new resources on-line as soon as possible before the response times degrade too much. Robert verifies with his team that network, data center and security infrastructure resources are being automatically provisioned and coordinated to support the additional traffic. </p>
-                <p class="text-muted">CIOs need an agile infrastructure that can rapidly and cost efficiently provide network, compute, storage, and security resources to users and customers alike.</p>
-                <a class="btn btn-primary btn-lg showTechnology">See the Technology</a>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="technology">
           <div class="container">
             <button type="button" class="close" aria-hidden="true">&times;</button>
@@ -93,6 +80,21 @@
                 <li><a href="http://www.cisco.com/en/US/prod/collateral/netmgtsw/ps13001/ps13213/at_a_glance_c45-728818.pdf">At a Glance</a></li>
                 <li><a href="http://www.cisco.com/en/US/prod/collateral/modules/ps2706/ps11208/data_sheet_c78-618245_ps13213_Products_Data_Sheet.html">Data Sheet</a></li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 col-lg-6">
+                <p><img class="img-responsive img-circle" src="images/robert-square.jpg"></p>
+              </div>
+              <div class="col-md-7 col-lg-6">
+                <p class="lead text-gradient">Meet Robert. It’s 8am and he is on a conference call with the executive team in charge of the most recent blockbuster product.</p>
+                <p>They are reporting much higher than expected usage and need to bring new resources on-line as soon as possible before the response times degrade too much. Robert verifies with his team that network, data center and security infrastructure resources are being automatically provisioned and coordinated to support the additional traffic. </p>
+                <p class="text-muted">CIOs need an agile infrastructure that can rapidly and cost efficiently provide network, compute, storage, and security resources to users and customers alike.</p>
+                <a class="btn btn-primary btn-lg showTechnology">See the Technology</a>
+              </div>
             </div>
           </div>
         </div>
@@ -300,6 +302,6 @@
         cbpFixedScrollLayout.init();
       });
     </script>
-    
+
 </body>
 </html>

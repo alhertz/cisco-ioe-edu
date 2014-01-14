@@ -43,6 +43,11 @@ h1,h2,h3,h4,h5, .lead {
 .img-thumbnail {
   border-radius: 0;
 }
+.img-circle {
+  @include box-shadow();
+  border: 5px solid #f5f5f5;
+}
+
 .btn-primary {
   font-weight: 300;
   border: none;
@@ -54,7 +59,6 @@ h1,h2,h3,h4,h5, .lead {
   background: transparent;
   border: 3px solid #FFF;
   color: #FFF;
-  margin-top: 1.0em;
   &:hover {
     border-color: $body-bg;
     color: $body-bg;
@@ -77,6 +81,9 @@ h1,h2,h3,h4,h5, .lead {
   z-index: 9;
   width: 100%;
   margin: 0;
+  @media (max-width: $screen-sm-min) {
+    position: relative;
+  }
   &.navbar-inverse {
     background: #000;
   }
@@ -113,6 +120,7 @@ h1,h2,h3,h4,h5, .lead {
 .scenarios {
   // Navigation
   & > nav {
+    display: none;
     position: fixed;
     z-index: 9999;
     right: 100px;
@@ -184,6 +192,23 @@ h1,h2,h3,h4,h5, .lead {
   .secondary-content {
     display: none;
   }
+  #arrow {
+    background: url("../images/arrow.png") no-repeat;
+    background-size: 100% auto;
+    height: 226px;
+    width: 47px;
+    background-position: center center;
+    right: 0;
+    top: 0;
+    opacity: .5;
+    position: absolute;
+    top: 50%;
+    margin-top: -113px;
+    margin-right: 72px;
+    @media (max-width: $screen-sm-min) {
+      display: none;
+    }
+  }
   .content {
     // top: 50%;
     // position: absolute;
@@ -191,9 +216,10 @@ h1,h2,h3,h4,h5, .lead {
     padding-top: 4.0em;
     .secondary-content {
       padding-top: 2.0em;
-      .text-muted {
+      .lead.text-muted {
         color: $body-bg;
         opacity: .7;
+        font-size: 1.3em;
       }
       .btn-default {
         margin-bottom: 170px;
@@ -201,9 +227,11 @@ h1,h2,h3,h4,h5, .lead {
     }
   }
   @media (max-width: $screen-sm-min) {
+    padding-top: 0;
     .content {
       position: relative;
       margin: 0;
+      padding: 0;
       text-align: center;
       h2 {
         font-size: 1.5em;
@@ -241,8 +269,6 @@ h1,h2,h3,h4,h5, .lead {
     .img-circle {
       max-width: 80%;
       margin: 0 auto;
-      @include box-shadow();
-      border: 5px solid #f5f5f5;
     }
     .btn-primary {
       margin-top: 1.0em;
