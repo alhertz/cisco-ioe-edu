@@ -15,22 +15,38 @@ $(function(){
     $('#scenario-2').waypoint(function() {
         $( '#arrow' ).fadeOut( 2500 );
         // $( '#scenario-2 .content, .scenarios nav' ).fadeIn( 1500 );
-        $( '.img-sm' ).delay( 1500 ).addClass( 'slideDown' );
-        $( '.img-md' ).addClass( 'slideUp' );
-        $( '.img-lg' ).addClass( 'slideRight' );
-        $( '.col-md-7' ).addClass( 'slideLeft' );
+        $(this).closest('section').find( '.img-sm' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
+        $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
     $('#scenario-3').waypoint(function() {
         $( '#scenario-3 .content' ).fadeIn( 2500 );
+        $(this).closest('section').find( '.img-sm' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
+        $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
     $('#scenario-4').waypoint(function() {
         $( '#scenario-4 .content' ).fadeIn( 2500 );
+        $(this).closest('section').find( '.img-sm' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
+        $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
     $('#scenario-5').waypoint(function() {
         $( '#scenario-5 .content' ).fadeIn( 2500 );
+        $(this).closest('section').find( '.img-sm' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
+        $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
     $('#scenario-6').waypoint(function() {
         $( '#scenario-6 .content' ).fadeIn( 2500 );
+        $(this).closest('section').find( '.img-sm' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
+        $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
 
     // Make the show technology button...umm
@@ -39,8 +55,8 @@ $(function(){
         // Hide the scenarios nav
         $( '.scenarios > nav').fadeOut();
         // Find respective .content and hide it
-        $(this).closest('section').find('.content').fadeOut(); 
-        $(this).closest('section').find('.technology').fadeIn( function() {
+        $(this).closest('section').find('.content').fadeOut( 500 ); 
+        $(this).closest('section').find('.technology').fadeIn( 1000, function() {
             // Blur the content and then fade it back in slowly
             $( '.close' ).click(function() {
                 $(this).closest('section').find('.technology').fadeOut( function() {
