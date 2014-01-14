@@ -14,7 +14,11 @@ $(function(){
     // scenario wrapper is 25% (of the viewport) away
     $('#scenario-2').waypoint(function() {
         $( '#arrow' ).fadeOut( 2500 );
-        $( '#scenario-2 .content, .scenarios nav' ).fadeIn( 2500 );
+        // $( '#scenario-2 .content, .scenarios nav' ).fadeIn( 1500 );
+        $( '.img-sm' ).delay( 1500 ).addClass( 'slideDown' );
+        $( '.img-md' ).addClass( 'slideUp' );
+        $( '.img-lg' ).addClass( 'slideRight' );
+        $( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '25%' });
     $('#scenario-3').waypoint(function() {
         $( '#scenario-3 .content' ).fadeIn( 2500 );
