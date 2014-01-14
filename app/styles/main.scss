@@ -50,6 +50,9 @@ html, body,
 }
 body {
   line-height: 1.5;
+  @media (min-width: $screen-lg-min) {
+    font-size: 18px;
+  }
 }
 h1,h2,h3,h4,h5, .lead {
   font-weight: 300;
@@ -171,6 +174,10 @@ h1,h2,h3,h4,h5, .lead {
         border: 7px solid #00908c;
         margin-left: -2px;
         margin-top: -2px;
+      }
+      &.scenario-current.first:after {
+        border-color: #FFF;
+        background: #FFF;
       }
     }
     // Position menu at bottom of screen on small devices
