@@ -27,13 +27,13 @@ $(function(){
     $( '.showTechnology' ).click(function() {
         // Hide the scenarios nav
         $( '.scenarios > nav').fadeOut();
-        // Find respective .content and hide it 
-        // $(this).closest('section').find('.content').toggle( 500, function()
-        $(this).closest('section').find('.technology').fadeIn(500, function() {
+        // Find respective .content and blur it
+        $(this).closest('section').find('.content').addClass( 'blur' ); 
+        $(this).closest('section').find('.technology').fadeIn(2500, function() {
             $( '.close' ).click(function() {
-                $('.technology').fadeOut( 500, function() {
-                    $('.content').fadeIn( 1500 );
+                $('.technology').fadeOut( 250, function() {
                     $( '.scenarios > nav').fadeIn();
+                    $('.content').removeClass( 'blur' );
                 });
             });
         });
