@@ -345,9 +345,10 @@ h1,h2,h3,h4,h5, .lead {
       position: fixed;
       top: 0;
       height: 100%;
-      overflow: scroll;
       margin-top: 0;
       padding: 3.0em 0 0 0;
+      overflow-y: scroll; /* has to be scroll, not auto */
+      -webkit-overflow-scrolling: touch;
       .close {
         width: 100%;
         margin: 0;
