@@ -15,6 +15,7 @@ $(function(){
         $( '#scenario-3 .content' ).fadeIn( 2500 );
     },{ offset: '25%' });
     $('#scenario-4').waypoint(function() {
+
         $( '#scenario-4 .content' ).fadeIn( 2500 );
     },{ offset: '25%' });
     $('#scenario-5').waypoint(function() {
@@ -28,14 +29,13 @@ $(function(){
         // Hide the scenarios nav
         $( '.scenarios > nav').fadeOut();
         // Find respective .content and hide it
-        $(this).closest('section').find('.content').fadeOut();
-        $(this).closest('section').find('.technology').fadeIn(500, function() {
+        $(this).closest('section').find('.content').fadeOut(); 
+        $(this).closest('section').find('.technology').fadeIn( function() {
             // Blur the content and then fade it back in slowly
-            $(this).closest('section').find('.content').addClass( 'blur' ).fadeIn( 2500 ); 
             $( '.close' ).click(function() {
-                $('.technology').fadeOut( 250, function() {
+                $(this).closest('section').find('.technology').fadeOut( function() {
+                    $(this).closest('section').find('.content').fadeIn();
                     $( '.scenarios > nav').fadeIn();
-                    $('.content').removeClass( 'blur' );
                 });
             });
         });

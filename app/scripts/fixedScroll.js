@@ -56,7 +56,7 @@ var cbpFixedScrollLayout = (function() {
   function changeNav( $section ) {
     config.$navlinks.eq( config.currentLink ).removeClass( 'scenario-current' );
     config.currentLink = $section.index( 'section' );
-    config.$navlinks.eq( config.currentLink ).addClass( 'scenario-current' );
+    config.$navlinks.eq( config.currentLink ).addClass( 'scenario-current expand' );
   }
 
   // function to scroll / animate the body
