@@ -27,9 +27,11 @@ $(function(){
     $( '.showTechnology' ).click(function() {
         // Hide the scenarios nav
         $( '.scenarios > nav').fadeOut();
-        // Find respective .content and blur it
-        $(this).closest('section').find('.content').addClass( 'blur' ); 
-        $(this).closest('section').find('.technology').fadeIn(2500, function() {
+        // Find respective .content and hide it
+        $(this).closest('section').find('.content').fadeOut();
+        $(this).closest('section').find('.technology').fadeIn(500, function() {
+            // Blur the content and then fade it back in slowly
+            $(this).closest('section').find('.content').addClass( 'blur' ).fadeIn( 2500 ); 
             $( '.close' ).click(function() {
                 $('.technology').fadeOut( 250, function() {
                     $( '.scenarios > nav').fadeIn();
