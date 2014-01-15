@@ -3,16 +3,6 @@ $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'compass';
 
-@mixin grayscale-gradient-bg {
-  background: #EEE; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 25%, #eeeeee 75%, #ffffff 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(25%,#eeeeee), color-stop(75%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-}
 @mixin text-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -89,9 +79,9 @@ h1,h2,h3,h4,h5, .lead {
 .text-gradient {
   color: $brand-primary;
   background-color: $brand-primary;
-  @include filter-gradient(#c9da2a, #00908c, horizontal);
+  @include filter-gradient( #00908c, #c9da2a, horizontal);
   $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left bottom,  #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  @include background-image(linear-gradient(left bottom, #00908c 0%, #3eb44a 50%, #c9da2a 100%));
   @include text-gradient();
 }
 // Hack way to remove gradient background on FF
@@ -238,7 +228,7 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
-  background-color: #00908c;
+  background-color: $brand-primary;
   @include filter-gradient(#c9da2a, #00908c, horizontal);
   $experimental-support-for-svg: true;
   @include background-image(linear-gradient(left bottom,  #c9da2a 0%,#3eb44a 50%,#00908c 100%));
@@ -359,7 +349,10 @@ h1,h2,h3,h4,h5, .lead {
     height: 100%;
     display: none;
     position: absolute;
-    @include grayscale-gradient-bg;
+    background-color: #ffffff;
+    @include filter-gradient(#ffffff, #ffffff, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #ffffff 0%,#e2e2e2 25%,#e2e2e2 75%,#ffffff 100%));
     padding: 8.0em 0 0 0;
     h4 {
       color: #999;
