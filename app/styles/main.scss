@@ -336,7 +336,7 @@ h1,h2,h3,h4,h5, .lead {
       &.img-md,
       &.img-lg,
       .col-md-7 {
-        visibility: visible;
+        visibility: visible !important;
       }
     }
   }
