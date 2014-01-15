@@ -1,6 +1,7 @@
 $navbar-height: 84px;
 $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/bootstrap';
+@import 'compass';
 @mixin color-gradient-bg {
   background: $brand-primary; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -14,7 +15,7 @@ $brand-primary: #00908c;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 }
 @mixin grayscale-gradient-bg {
-  background: #ffffff; /* Old browsers */
+  background: #EEE; /* Old browsers */
   background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 25%, #eeeeee 75%, #ffffff 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(25%,#eeeeee), color-stop(75%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
@@ -24,7 +25,6 @@ $brand-primary: #00908c;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 @mixin text-gradient {
-  background: -webkit-linear-gradient(45deg, #00908c 0%,#3eb44a 50%, #c9da2a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -78,7 +78,7 @@ h1,h2,h3,h4,h5, .lead {
   }
 }
 .lead {
-  font-size: 1.5em !important;
+  // font-size: 1.5em !important;
 }
 .btn-primary {
   font-weight: 300;
@@ -101,9 +101,18 @@ h1,h2,h3,h4,h5, .lead {
 }
 
 .text-gradient {
+  color: $brand-primary;
+  background: linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* W3C */
   @include text-gradient();
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
-
+// Hack way to remove gradient background on FF
+// If flexbox isn't supported, that means text background clipping won't either
+// This leverages modernizers appendation of classes to remove the gradient BG on FF
+.no-flexbox .text-gradient {
+  background: #FFF;
+}
 
 .navbar {
   border-radius: 0;
@@ -120,9 +129,12 @@ h1,h2,h3,h4,h5, .lead {
   }
   & > .container  {
     .navbar-brand {
-      background: url('../images/cisco-logo.png') no-repeat;
-      background-size: 100% auto;
-      background-position: center center;
+      background: {
+        image: image-url("../images/cisco-logo.png");
+        repeat: no-repeat;
+        position: center center;
+      };
+      @include background-size(contain);
       width: 80px;
       height: $navbar-height;
       text-indent: -9999px;
@@ -350,8 +362,9 @@ h1,h2,h3,h4,h5, .lead {
     @include grayscale-gradient-bg;
     padding: 8.0em 0 0 0;
     h4 {
-      color: #CCC;
-      margin-top: -15px;
+      color: #999;
+      margin-top: -18px;
+      font-style: italic;
     }
     h3 {
       color: $brand-primary;
