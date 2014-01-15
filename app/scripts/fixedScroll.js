@@ -15,7 +15,7 @@ var cbpFixedScrollLayout = (function() {
     // the cbp-fbscroller´s sections
     $sections : $( '#scenarios > section' ),
     // the navigation links
-    $navlinks : $( '#scenarios > nav:first > a, #scenario-link, #arrow' ),
+    $navlinks : $( '#scenarios > nav:first > a, #scenario-link, #arrow.light' ),
     // index of current link / section
     currentLink : 0,
     // the body element
@@ -56,7 +56,7 @@ var cbpFixedScrollLayout = (function() {
   function changeNav( $section ) {
     config.$navlinks.eq( config.currentLink ).removeClass( 'scenario-current' );
     config.currentLink = $section.index( 'section' );
-    config.$navlinks.eq( config.currentLink ).addClass( 'scenario-current expand' );
+    config.$navlinks.eq( config.currentLink ).addClass( 'scenario-current' );
   }
 
   // function to scroll / animate the body
