@@ -23,7 +23,7 @@ html, body,
 .scenarios,
 .scenarios section { 
   height: 100%; 
-  overflow: show; 
+  overflow: visible; 
   font-weight: 400;
 }
 body {
@@ -486,5 +486,37 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-6 {
   @media (max-width: $screen-sm-min) {
     border-bottom: 40px solid $body-bg;
+  }
+}
+#scenario-7 {
+  height: auto;
+  padding: 4.0em 0 15.0em 0;
+  background: {
+    image: image-url("../images/section-2-bg.jpg");
+    repeat: no-repeat;
+    position: top center;
+    attachment: scroll;
+  };
+  @include background-size(cover);
+  .social {
+    font-size: 1.0em;
+    padding-top: 2.0em;
+    width: 255px;
+    margin: 0 auto;
+    a {
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      color: #999;
+      border: 1px solid #CCC;
+      opacity: .6;
+      @include smooth-trans;
+      display: inline-block;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
   }
 }
