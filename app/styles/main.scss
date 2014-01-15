@@ -24,6 +24,7 @@ $brand-primary: #00908c;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 @mixin text-gradient {
+  background: -webkit-linear-gradient(45deg, #00908c 0%,#3eb44a 50%, #c9da2a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -100,7 +101,6 @@ h1,h2,h3,h4,h5, .lead {
 }
 
 .text-gradient {
-  @include color-gradient-bg();
   @include text-gradient();
 }
 
