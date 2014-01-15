@@ -10,9 +10,14 @@ $(function(){
         $( '#scenario-1 #scenario-link' ).delay().addClass( 'animated swing' );
     });
 
+    $( ".scenarios nav a" ).hover(function() {
+      // $( '.tooltip' ).css( "opacity", "1.0" );
+      $(this).closest('a').find( '.tooltip' ).css( "opacity", "1.0" );
+      $( this ).css( "color", "red" );
+    });
+
     // Trigger display of content when
     // scenario wrapper is 25% (of the viewport) away
-
     //TODO make this smarter
     $('#scenario-2').waypoint(function() {
         $( '#arrow' ).fadeOut( 2500 );

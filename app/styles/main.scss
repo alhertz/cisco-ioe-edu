@@ -161,6 +161,15 @@ h1,h2,h3,h4,h5, .lead {
     @media (min-width: $screen-lg-min) {
       right: 2%;
     }
+    .tooltip {
+      @include smooth-trans;
+      &.left {
+        margin-top: -7px;
+        margin-left: -205px;
+        padding: 0 5px;
+        width: 200px;
+      }
+    }
     a {
       display: block;
       position: relative;
