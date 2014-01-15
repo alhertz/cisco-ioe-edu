@@ -332,6 +332,12 @@ h1,h2,h3,h4,h5, .lead {
         border: none;
         padding: 0;
       }
+      &.img-sm, 
+      &.img-md,
+      &.img-lg,
+      .col-md-7 {
+        visibility: visible;
+      }
     }
   }
   .technology {
@@ -402,7 +408,7 @@ h1,h2,h3,h4,h5, .lead {
         width: 100%;
         margin: 0;
         z-index: 9;
-        position: fixed;
+        position: absolute;
         top: 0;
         text-align: right;
         padding: 10px 25px 10px 0;
