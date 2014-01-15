@@ -1,7 +1,6 @@
 $navbar-height: 84px;
 $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/bootstrap';
-
 @mixin color-gradient-bg {
   background: $brand-primary; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -39,8 +38,6 @@ $brand-primary: #00908c;
   -o-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
 }
-@import "_animations.css";
-
 header,
 html, body,
 .scenarios,
