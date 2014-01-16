@@ -105,17 +105,17 @@ h1,h2,h3,h4,h5, .lead {
 // Disable text gradient on FF & IE
 .lt-ie9 .text-gradient,
 .no-flexbox .text-gradient {
-  color: $brand-primary !important;
-  background-image: none !important;
-  background: $body-bg !important;
+  color: $brand-primary;
+  filter: none; // IE
+  background: $body-bg; // FF
 }
 
-// .lt-ie9 {
-//   .img-sm,
-//   .img-md {
-//     display: none !important;
-//   }
-// }
+.lt-ie9 {
+  .img-sm,
+  .img-md {
+    display: none !important;
+  }
+}
 .navbar {
   border-radius: 0;
   border: none;
