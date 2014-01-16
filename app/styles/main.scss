@@ -25,10 +25,29 @@ $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/utilities';
 @import 'sass-bootstrap/lib/responsive-utilities';
 
-// Compass
-@import 'compass';
-
 // Mixins
+@mixin color-gradient-bg {
+  background: $brand-primary; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYzlkYTJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjM2ViNDRhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOTA4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(45deg,  #c9da2a 0%, #3eb44a 50%, #00908c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#c9da2a), color-stop(50%,#3eb44a), color-stop(100%,#00908c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+@mixin grayscale-gradient-bg {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 25%, #eeeeee 75%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(25%,#eeeeee), color-stop(75%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 @mixin text-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -107,13 +126,13 @@ h1,h2,h3,h4,h5, .lead {
   }
 }
 .text-gradient {
-  @include filter-gradient( #00908c, #c9da2a, horizontal);
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left bottom, #00908c 0%, #3eb44a 50%, #c9da2a 100%));
+  background: -webkit-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
+  background: -moz-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
+  background: -o-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
+  background: linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
   @include text-gradient();
 }
 // Disable text gradient on FF & IE
-.text-gradient,
 .no-flexbox .text-gradient {
   color: $brand-primary;
   filter: none; // IE
@@ -295,9 +314,7 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
-  @include filter-gradient(#c9da2a, #00908c, horizontal);
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left bottom,  #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  @include color-gradient-bg();
   .content,
   .secondary-content {
     display: none;
@@ -406,10 +423,8 @@ h1,h2,h3,h4,h5, .lead {
     width: 100%;
     height: 100%;
     display: none;
-    @include filter-gradient(#ffffff, #ffffff, vertical);
-    $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(top,  #ffffff 0%,#e2e2e2 25%,#e2e2e2 75%,#ffffff 100%));
     padding: 8.0em 0 4.0em 0;
+    @include grayscale-gradient-bg();
     h4 {
       color: #999;
       font-style: italic;
