@@ -1,6 +1,11 @@
 $(function(){
     // JS lint is mad at me
     'use strict';
+    $('#scenario-1').css({'height':(($(window).height()))+'px'});
+    $(window).resize(function(){
+        $('#scenario-1').css({'height':(($(window).height()))+'px'});
+    });
+
     // Fade the introduction in all sexy like
     $( '#scenario-1 .content' ).fadeIn( 2500 );
     // Fade the secondary content in all sexy like too
