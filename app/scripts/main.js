@@ -5,16 +5,17 @@ $(function(){
     $( '#scenario-1 .content' ).fadeIn( 2500 );
     // Fade the secondary content in all sexy like too
     // But also wait a little bit
-    $( '#scenario-1 .secondary-content' ).delay( 500 ).fadeIn( 2500, function() {
-        // $( '#scenario-1 #arrow' ).delay( 500 ).show().addClass( 'animated slideInDown' );
-        $( '#scenario-1 #scenario-link' ).delay().addClass( 'animated swing' );
-    });
+    $( '#scenario-1 .secondary-content' ).delay( 500 ).fadeIn( 2500 );
 
-    $( ".scenarios nav a" ).hover(function() {
-      // $( '.tooltip' ).css( "opacity", "1.0" );
-      $(this).closest('a').find( '.tooltip' ).css( "opacity", "1.0" );
-      $( this ).css( "color", "red" );
-    });
+    // Tooltip Event
+    $('.scenarios nav a').hover(
+        function () {
+            $(this).closest('a').find( '.tooltip' ).css( "opacity", "1.0" );
+        }, 
+        function () {
+            $(this).closest('a').find( '.tooltip' ).css( "opacity", "0" );
+        }
+    );
 
     // Trigger display of content when
     // scenario wrapper is 25% (of the viewport) away

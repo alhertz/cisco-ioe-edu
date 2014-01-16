@@ -164,10 +164,26 @@ h1,h2,h3,h4,h5, .lead {
     .tooltip {
       @include smooth-trans;
       &.left {
-        margin-top: -7px;
+        margin-top: -9px;
         margin-left: -205px;
         padding: 0 5px;
-        width: 200px;
+        width: 190px;
+      }
+      .tooltip-inner {
+        background: $brand-primary;
+        padding: 8px 15px;
+        span {
+          font-weight: bold;
+          border-right: 1px solid darken(#FFF, 10%);
+          padding-right: 5px;
+          margin-right: 3px;
+        }
+      }
+      .tooltip-arrow {
+        border-left-color: $brand-primary;
+      }
+      @media (max-width: $screen-sm-min) {
+        display: none;
       }
     }
     a {
