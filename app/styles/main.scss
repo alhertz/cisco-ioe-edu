@@ -1,7 +1,58 @@
 $navbar-height: 84px;
 $brand-primary: #00908c;
-@import 'sass-bootstrap/lib/bootstrap';
+// @import 'sass-bootstrap/lib/bootstrap';
 @import 'compass';
+
+// Core variables and mixins
+@import 'sass-bootstrap/lib/variables';
+@import 'sass-bootstrap/lib/mixins';
+
+// Reset
+@import 'sass-bootstrap/lib/normalize';
+@import 'sass-bootstrap/lib/print';
+
+// Core CSS
+@import 'sass-bootstrap/lib/scaffolding';
+@import 'sass-bootstrap/lib/type';
+@import 'sass-bootstrap/lib/grid';
+@import 'sass-bootstrap/lib/forms';
+@import 'sass-bootstrap/lib/buttons';
+
+// Components
+@import 'sass-bootstrap/lib/navbar';
+@import 'sass-bootstrap/lib/thumbnails';
+@import 'sass-bootstrap/lib/close';
+@import 'sass-bootstrap/lib/tooltip';
+
+// Utility classes
+@import 'sass-bootstrap/lib/utilities';
+@import 'sass-bootstrap/lib/responsive-utilities';
+
+// Compass
+@import 'compass';
+
+@mixin color-gradient-bg {
+  background: $brand-primary; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYzlkYTJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjM2ViNDRhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOTA4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(45deg,  #c9da2a 0%, #3eb44a 50%, #00908c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#c9da2a), color-stop(50%,#3eb44a), color-stop(100%,#00908c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+@mixin grayscale-gradient-bg {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 25%, #eeeeee 75%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(25%,#eeeeee), color-stop(75%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 25%,#eeeeee 75%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 
 @mixin text-gradient {
   -webkit-background-clip: text;
@@ -78,10 +129,12 @@ h1,h2,h3,h4,h5, .lead {
 .text-gradient {
   color: $brand-primary;
   background-color: $brand-primary;
-  @include filter-gradient( #00908c, #c9da2a, horizontal);
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left bottom, #00908c 0%, #3eb44a 50%, #c9da2a 100%));
+  @include color-gradient-bg();
   @include text-gradient();
+  // @include filter-gradient( #00908c, #c9da2a, horizontal);
+  // $experimental-support-for-svg: true;
+  // @include background-image(linear-gradient(left bottom, #00908c 0%, #3eb44a 50%, #c9da2a 100%));
+  // @include text-gradient();
 }
 // Hack way to remove gradient background on FF
 // If flexbox isn't supported, that means text background clipping won't either
@@ -107,12 +160,10 @@ h1,h2,h3,h4,h5, .lead {
     .navbar-brand {
       width: 80px;
       text-indent: -9999px;
-      background: {
-        image: image-url("../images/cisco-logo.png");
-        repeat: no-repeat;
-        position: center center;
-      };
-      @include background-size(contain);
+      background-image: url("../images/cisco-logo.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
       margin-left: 0;
       &:hover {
         opacity: .9;
@@ -123,7 +174,7 @@ h1,h2,h3,h4,h5, .lead {
       src='../images/cisco-logo.png',
       sizingMethod='scale');
       -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
-      src='images/logo.gif',
+      src='../images/cisco-logo.png',
       sizingMethod='scale')";
       @media (max-width: $screen-sm-min) {
         width: 60px;
@@ -252,10 +303,11 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-1 {
   color: #FFF; 
   padding-top: $navbar-height;
-  background-color: $brand-primary;
-  @include filter-gradient(#c9da2a, #00908c, horizontal);
-  $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(left bottom,  #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  // background-color: $brand-primary;
+  // @include filter-gradient(#c9da2a, #00908c, horizontal);
+  // $experimental-support-for-svg: true;
+  // @include background-image(linear-gradient(left bottom,  #c9da2a 0%,#3eb44a 50%,#00908c 100%));
+  @include color-gradient-bg();
   .content,
   .secondary-content {
     display: none;
@@ -514,12 +566,10 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-7 {
   height: auto;
   padding: 4.0em 0 15.0em 0;
-  background: {
-    image: image-url("../images/section-2-bg.jpg");
-    repeat: no-repeat;
-    position: top center;
-    attachment: scroll;
-  };
+  background-image: url("../images/section-2-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: scroll;
   @include background-size(cover);
   .social {
     font-size: .85em;
