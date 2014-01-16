@@ -16,10 +16,10 @@ $(function(){
     // Tooltip Event
     $('.scenarios nav a').hover(
         function () {
-            $(this).closest('a').find( '.tooltip' ).css( "opacity", "1.0" );
-        }, 
+            $(this).closest('a').find( '.tooltip' ).css( 'opacity', '1.0' );
+        },
         function () {
-            $(this).closest('a').find( '.tooltip' ).css( "opacity", "0" );
+            $(this).closest('a').find( '.tooltip' ).css( 'opacity', '0' );
         }
     );
 
@@ -69,7 +69,7 @@ $(function(){
         // Hide the scenarios nav
         $( '.scenarios > nav').fadeOut();
         // Find respective .content and hide it
-        $(this).closest('section').find('.content').fadeOut( 500 ); 
+        $(this).closest('section').find('.content').fadeOut( 500 );
         $(this).closest('section').find('.technology').fadeIn( 1000, function() {
             // Blur the content and then fade it back in slowly
             $( '.close' ).click(function() {
