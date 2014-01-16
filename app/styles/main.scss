@@ -29,7 +29,7 @@ $brand-primary: #00908c;
 @import 'sass-bootstrap/lib/responsive-utilities';
 
 // Compass
-@import 'compass';
+// @import 'compass';
 
 @mixin color-gradient-bg {
   background: $brand-primary; /* Old browsers */
