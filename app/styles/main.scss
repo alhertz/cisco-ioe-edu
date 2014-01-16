@@ -64,20 +64,16 @@ h1,h2,h3,h4,h5, .lead {
   border: 5px solid #f5f5f5;
   &.img-sm {
     max-width: 25%;
+    height: auto;
     visibility: hidden;
   }
   &.img-md {
     max-width: 40%;
+    height: auto;
     visibility: hidden;
   }
   &.img-lg {
     visibility: hidden;
-  }
-}
-.lt-ie9 {
-  .img-sm,
-  .img-md {
-    display: none;
   }
 }
 .lead {
@@ -109,10 +105,17 @@ h1,h2,h3,h4,h5, .lead {
 // Disable text gradient on FF & IE
 .lt-ie9 .text-gradient,
 .no-flexbox .text-gradient {
-  color: $brand-primary;
-  background: $body-bg;
+  color: $brand-primary !important;
+  background-image: none !important;
+  background: $body-bg !important;
 }
 
+// .lt-ie9 {
+//   .img-sm,
+//   .img-md {
+//     display: none !important;
+//   }
+// }
 .navbar {
   border-radius: 0;
   border: none;
@@ -167,12 +170,7 @@ h1,h2,h3,h4,h5, .lead {
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    @media (min-width: $screen-md-min) {
-      right: 25px;
-    }
-    @media (min-width: $screen-lg-min) {
-      right: 2%;
-    }
+    right: 2%;
     a {
       outline: 0;
       display: block;
