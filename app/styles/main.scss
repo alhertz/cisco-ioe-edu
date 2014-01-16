@@ -417,8 +417,9 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
     @media (max-width: $screen-sm-min) {
-      position: fixed;
+      position: absolute;
       top: 0;
+      z-index: 99;
       height: 100%;
       margin-top: 0;
       padding: 3.0em 0 0 0;
@@ -495,7 +496,8 @@ h1,h2,h3,h4,h5, .lead {
     }
   }
   @media (max-width: $screen-sm-min) {
-    display: none;
+    margin-top: 2.0em;
+    opacity: 1.0;
   }
 }
 #scenario-2 {
@@ -545,6 +547,21 @@ h1,h2,h3,h4,h5, .lead {
       &:hover {
         text-decoration: none;
         background: darken($brand-primary, 5%);
+      }
+    }
+  }
+  @media (max-width: $screen-sm-min) {
+    padding: 0;
+    .social {
+      li {
+        width: 100%;
+        padding: 0;
+        a {
+          height: 40px; 
+          line-height: 40px;
+          border-radius: 0;
+          width: 100%;
+        }
       }
     }
   }

@@ -3,9 +3,9 @@ $(function(){
     'use strict';
 
     // Set first scenario height to window height
-    $('#scenario-1').css({'height':(($(window).height()))+'px'});
+    $('#scenario-1').css({'min-height':(($(window).height()))+'px'});
     $(window).resize(function(){
-        $('#scenario-1').css({'height':(($(window).height()))+'px'});
+        $('#scenario-1').css({'min-height':(($(window).height()))+'px'});
     });
 
     // Tooltip Event
@@ -44,28 +44,28 @@ $(function(){
         $(this).closest('section').find( '.img-sm' ).addClass( 'expandUp' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideRight' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'fadeIn' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'hatch' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'fadeIn' );
     },{ offset: '50%' });
     $('#scenario-4').waypoint(function() {
         $( '#scenario-4 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-sm' ).addClass( 'hatch' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'bigEntrance' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'fadeIn' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '50%' });
     $('#scenario-5').waypoint(function() {
         $( '#scenario-5 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-sm' ).addClass( 'fadeIn' );
         $(this).closest('section').find( '.img-md' ).addClass( 'fadeIn' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'hatch' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'bigEntrance' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'fadeIn' );
     },{ offset: '50%' });
     $('#scenario-6').waypoint(function() {
         $( '#scenario-6 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-sm' ).addClass( 'expandOpen' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideExpandUp' );
+        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
     },{ offset: '50%' });
 
     // Make the show technology button...umm
