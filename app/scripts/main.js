@@ -1,10 +1,22 @@
 $(function(){
     // JS lint is mad at me
     'use strict';
+
+    // Set first scenario height to window height
     $('#scenario-1').css({'height':(($(window).height()))+'px'});
     $(window).resize(function(){
         $('#scenario-1').css({'height':(($(window).height()))+'px'});
     });
+
+    // Tooltip Event
+    $('.scenarios nav a').hover(
+        function () {
+            $(this).closest('a').find( '.tooltip' ).css( "opacity", "1.0" );
+        }, 
+        function () {
+            $(this).closest('a').find( '.tooltip' ).css( "opacity", "0" );
+        }
+    );
 
     // Fade the introduction in all sexy like
     $( '#scenario-1 .content' ).fadeIn( 2500 );
