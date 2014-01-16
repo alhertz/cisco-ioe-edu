@@ -130,12 +130,19 @@ h1,h2,h3,h4,h5, .lead {
   }
   & > .container  {
     .navbar-brand {
+      width: 80px;
+      text-indent: -9999px;
       background: {
         image: image-url("../images/cisco-logo.png");
         repeat: no-repeat;
         position: center center;
       };
       @include background-size(contain);
+      margin-left: 0;
+      &:hover {
+        opacity: .9;
+        cursor: pointer;
+      }
       // IE8
       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
       src='../images/cisco-logo.png',
@@ -143,14 +150,6 @@ h1,h2,h3,h4,h5, .lead {
       -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
       src='images/logo.gif',
       sizingMethod='scale')";
-      width: 80px;
-      height: $navbar-height;
-      text-indent: -9999px;
-      margin-left: 0;
-      &:hover {
-        opacity: .9;
-        cursor: pointer;
-      }
       @media (max-width: $screen-sm-min) {
         width: 60px;
         margin-left: 15px;
@@ -548,21 +547,25 @@ h1,h2,h3,h4,h5, .lead {
   };
   @include background-size(cover);
   .social {
-    font-size: 1.0em;
+    font-size: .85em;
     padding-top: 2.0em;
-    width: 260px;
+    width: 440px;
     margin: 0 auto;
     a {
-      height: 50px;
-      width: 50px;
+      height: 90px;
+      width: 90px;
       text-align: center;
-      line-height: 50px;
+      line-height: 90px;
       border-radius: 50%;
       color: $body-bg;
       border: 1px solid $brand-primary;
       background: $brand-primary;
       @include smooth-trans;
       display: inline-block;
+      &:hover {
+        text-decoration: none;
+        background: darken($brand-primary, 5%);
+      }
     }
   }
 }
