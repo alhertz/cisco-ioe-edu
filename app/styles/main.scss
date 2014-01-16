@@ -133,10 +133,18 @@ h1,h2,h3,h4,h5, .lead {
   @include text-gradient();
 }
 // Disable text gradient on FF & IE
+.lt-ie9 .text-gradient,
 .no-flexbox .text-gradient {
   color: $brand-primary;
   filter: none; // IE
   background: $body-bg; // FF
+}
+// Hide complementary images on IE
+.lt-ie9 .img-sm,
+.lt-ie9 .img-md {
+  width: 1px;
+  height: 1px;
+  display: none;
 }
 
 // Navbar
