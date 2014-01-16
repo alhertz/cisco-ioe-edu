@@ -18,10 +18,9 @@ $brand-primary: #00908c;
   -o-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
 }
-header,
-html, body,
-.scenarios,
-.scenarios section { 
+
+html, body, 
+#scenario-1 { 
   height: 100%; 
   overflow: visible; 
   font-weight: 400;
@@ -309,7 +308,7 @@ h1,h2,h3,h4,h5, .lead {
     @media (max-width: $screen-sm-min) {
       display: block;
     }
-    padding: 4.0em 0 0 0;
+    padding: 4.0em 0;
     border-top: $navbar-height solid #FFF;
     .lead {
       font-size: 1.5em;
@@ -360,9 +359,9 @@ h1,h2,h3,h4,h5, .lead {
         border: none;
         padding: 0;
       }
-      &.img-sm, 
-      &.img-md,
-      &.img-lg,
+      .img-sm, 
+      .img-md,
+      .img-lg,
       .col-md-7 {
         visibility: visible !important;
       }
