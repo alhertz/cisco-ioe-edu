@@ -15,7 +15,7 @@ var cbpFixedScrollLayout = (function() {
     // the cbp-fbscroller´s sections
     $sections : $( '#scenarios > section' ),
     // the navigation links
-    $navlinks : $( '#scenarios > nav:first > a, #scenario-link, #arrow.light' ),
+    $navlinks : $( '#scenarios > nav:first > a, #scenario-link, #arrow.light, #arrow.up' ),
     // index of current link / section
     currentLink : 0,
     // the body element
@@ -46,9 +46,9 @@ var cbpFixedScrollLayout = (function() {
     }, { offset: '-30%' } );
 
     // on window resize: the body is scrolled to the position of the current section
-    // $( window ).on( 'debouncedresize', function() {
-    //   scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
-    // } );
+    $( window ).on( 'debouncedresize', function() {
+      scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
+    } );
        
   }
 
