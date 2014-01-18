@@ -18,14 +18,27 @@ $(function(){
         }
     );
 
+    // Smooth scroll anchor links (continue experience)
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+
     // Fade the introduction in all sexy like
     $( '#scenario-1 .content' ).fadeIn( 2500 );
     // Fade the secondary content in all sexy like too
     // But also wait a little bit
-    $( '#scenario-1 .secondary-content' ).delay( 500 ).fadeIn( 2500, function() {
-        // $( '#scenario-1 #arrow' ).delay( 500 ).show().addClass( 'animated slideInDown' );
-        $( '#scenario-1 #scenario-link' ).delay().addClass( 'animated swing' );
-    });
+    $( '#scenario-1 .secondary-content' ).delay( 500 ).fadeIn( 2500 );
 
     // Trigger display of content when
     // scenario wrapper is 25% (of the viewport) away. This could be smarter.

@@ -648,6 +648,9 @@ h1,h2,h3,h4,h5, .lead {
   }
   @media (max-width: $screen-sm-min) {
     padding: 0;
+    #arrow.up {
+      display: none;
+    }
     .social {
       li {
         width: 100%;
