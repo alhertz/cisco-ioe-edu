@@ -140,7 +140,8 @@ h1,h2,h3,h4,h5, .lead {
 }
 // Hide complementary images on IE
 .lt-ie9 .img-sm,
-.lt-ie9 .img-md {
+.lt-ie9 .img-md,
+.lt-ie9 .img-icon, {
   width: 1px;
   height: 1px;
   display: none;
@@ -389,6 +390,12 @@ h1,h2,h3,h4,h5, .lead {
     .btn-primary {
       margin-top: 1.0em;
     }
+    .btn-link {
+      padding-top: 30px !important;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     .text-muted {
       color: #999;
       margin-top: 2.0em;
@@ -445,6 +452,9 @@ h1,h2,h3,h4,h5, .lead {
       }
       .text-muted {
         border: none;
+        padding: 0;
+      }
+      .btn-link {
         padding: 0;
       }
       .col-md-5 {
