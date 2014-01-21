@@ -44,11 +44,6 @@ var cbpFixedScrollLayout = (function() {
     }, { offset: '30%' } ).waypoint( function( direction ) {
       if( direction === 'up' ) { changeNav( $( this ) ); }
     }, { offset: '-30%' } );
-
-    // on window resize: the body is scrolled to the position of the current section
-    $( window ).on( 'debouncedresize', function() {
-      scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
-    } );
        
   }
 
