@@ -48,35 +48,35 @@ $(function(){
         $(this).closest('section').find( '.img-icon' ).addClass( 'slideRight' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'expandUp' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
+        $(this).closest('section').find( '.col-sm-7' ).addClass( 'slideLeft' );
     },{ offset: '50%' });
     $('#scenario-3').waypoint(function() {
         $( '#scenario-3 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-icon' ).addClass( 'expandUp' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideRight' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'fadeIn' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'fadeIn' );
+        $(this).closest('section').find( '.col-sm-7' ).addClass( 'fadeIn' );
     },{ offset: '50%' });
     $('#scenario-4').waypoint(function() {
         $( '#scenario-4 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-icon' ).addClass( 'hatch' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'bigEntrance' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
+        $(this).closest('section').find( '.col-sm-7' ).addClass( 'slideLeft' );
     },{ offset: '50%' });
     $('#scenario-5').waypoint(function() {
         $( '#scenario-5 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-icon' ).addClass( 'fadeIn' );
         $(this).closest('section').find( '.img-md' ).addClass( 'fadeIn' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'hatch' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'fadeIn' );
+        $(this).closest('section').find( '.col-sm-7' ).addClass( 'fadeIn' );
     },{ offset: '50%' });
     $('#scenario-6').waypoint(function() {
         $( '#scenario-6 .content' ).fadeIn( 2500 );
         $(this).closest('section').find( '.img-icon' ).addClass( 'expandOpen' );
         $(this).closest('section').find( '.img-md' ).addClass( 'slideUp' );
         $(this).closest('section').find( '.img-lg' ).addClass( 'slideRight' );
-        $(this).closest('section').find( '.col-md-7' ).addClass( 'slideLeft' );
+        $(this).closest('section').find( '.col-sm-7' ).addClass( 'slideLeft' );
     },{ offset: '50%' });
 
     // Show/hide nav again at end of story
