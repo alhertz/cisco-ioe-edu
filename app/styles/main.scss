@@ -155,7 +155,7 @@ h1,h2,h3,h4,h5, .lead {
   z-index: 9;
   width: 100%;
   margin: 0;
-  @media (max-width: $screen-sm-min) {
+  @media (max-width: $screen-md-min) {
     position: relative;
   }
   &.navbar-inverse {
@@ -174,7 +174,7 @@ h1,h2,h3,h4,h5, .lead {
         opacity: .9;
         cursor: pointer;
       }
-      @media (max-width: $screen-sm-min) {
+      @media (max-width: $screen-md-min) {
         width: 60px;
         margin-left: 15px;
         margin-right: 15px;
@@ -185,7 +185,7 @@ h1,h2,h3,h4,h5, .lead {
     margin-bottom: 0;
     color: #FFF;
     margin-top: 32px;
-    @media (max-width: $screen-sm-min) {
+    @media (max-width: $screen-md-min) {
       float: right;
       margin-right: 15px;
     }
@@ -267,12 +267,12 @@ h1,h2,h3,h4,h5, .lead {
         margin-top: -5px;
         border-width: 5px 0 5px 5px;
       }
-      @media (max-width: $screen-sm-min) {
+      @media (max-width: $screen-md-min) {
         display: none;
       }
     }
     // Position menu at bottom of screen on small devices
-    @media (max-width: $screen-sm-min) {
+    @media (max-width: $screen-md-min) {
       display: none !important;
       @include box-shadow();
       right: 0;
@@ -304,7 +304,7 @@ h1,h2,h3,h4,h5, .lead {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    @media (max-width: $screen-sm-min) {
+    @media (max-width: $screen-md-min) {
       height: auto;
     }
   }
@@ -329,7 +329,7 @@ h1,h2,h3,h4,h5, .lead {
     opacity: 1.0;
     @include smooth-trans;
   }
-  @media (max-width: $screen-sm-min) {
+  @media all and (max-width: $screen-md-min) {
     display: none;
   }
 }
@@ -357,8 +357,9 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
   }
-  @media (max-width: $screen-sm-min) {
+  @media all and (max-width: $screen-md-min) {
     padding-top: 0;
+    min-height: 0 !important;
     .content {
       position: relative;
       margin: 0;
@@ -435,13 +436,13 @@ h1,h2,h3,h4,h5, .lead {
         margin-top: 10px;
       }
     }
-    .col-sm-5 {
+    .col-md-5 {
       margin-top: -50px
     }
-    .col-sm-7 {
+    .col-md-7 {
       visibility: hidden;
     }
-    @media (max-width: $screen-sm-min) {
+    @media all and (max-width: $screen-md-min) {
       margin: 0;
       border-top: 0;
       position: relative;
@@ -461,15 +462,15 @@ h1,h2,h3,h4,h5, .lead {
       .btn-link {
         padding: 0;
       }
-      .col-sm-5 {
+      .col-md-5 {
         margin-top: 0;
       }
       .img-sm, 
       .img-md,
       .img-lg,
       .img-icon,
-      .col-sm-5,
-      .col-sm-7 {
+      .col-md-5,
+      .col-md-7 {
         // Part of disabling animations on mobile
         visibility: visible !important;
       }
@@ -522,7 +523,7 @@ h1,h2,h3,h4,h5, .lead {
         @include smooth-trans();
       }
     }
-    @media (max-width: $screen-sm-min) {
+    @media all and (max-width: $screen-md-min) {
       top: 0;
       z-index: 99;
       height: 100%;
@@ -578,7 +579,7 @@ h1,h2,h3,h4,h5, .lead {
       display: block;
     }
   }
-  @media (max-width: $screen-sm-min) {
+  @media all and (max-width: $screen-md-min) {
     margin-top: 2.0em;
     opacity: 1.0;
   }
@@ -586,7 +587,7 @@ h1,h2,h3,h4,h5, .lead {
 // Decrease Margin Between Intro and First Story Content Scenario
 #scenario-2 {
   .content {
-    @media (max-width: $screen-sm-min) {
+    @media all and (max-width: $screen-md-min) {
       margin-top: -150px;
     }
   }
@@ -595,7 +596,7 @@ h1,h2,h3,h4,h5, .lead {
 #scenario-7 {
   height: auto;
   padding: 4.0em 0 15.0em 0;
-  background-image: url("../images/share-bg.jpg");
+  background-image: url("../images/scenario-6-bg.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: scroll;
@@ -651,7 +652,7 @@ h1,h2,h3,h4,h5, .lead {
       }
     }
   }
-  @media (max-width: $screen-sm-min) {
+  @media (max-width: $screen-md-min) {
     padding: 0;
     #arrow.up {
       display: none;
@@ -659,6 +660,7 @@ h1,h2,h3,h4,h5, .lead {
     .social {
       li {
         width: 100%;
+        max-width: 100%;
         padding: 0;
         a {
           height: 40px; 
