@@ -138,10 +138,11 @@ h1,h2,h3,h4,h5, .lead {
   filter: none; // IE
   background: $body-bg; // FF
 }
-// Hide complementary images on IE
+// Hide complementary images and tooltips on IE8
+.lt-ie9 .tooltip,
 .lt-ie9 .img-sm,
 .lt-ie9 .img-md,
-.lt-ie9 .img-icon, {
+.lt-ie9 .img-icon {
   width: 1px;
   height: 1px;
   display: none;
