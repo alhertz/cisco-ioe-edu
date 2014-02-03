@@ -1,5 +1,8 @@
 $navbar-height: 84px;
-$brand-primary: #00908c;
+$brand-primary: #00adee;
+
+$gradient-light: #00adee;
+$gradient-dark: #0067ab;
 
 // Core variables and mixins
 @import 'sass-bootstrap/lib/variables';
@@ -27,15 +30,13 @@ $brand-primary: #00908c;
 // Mixins
 @mixin color-gradient-bg {
   background: $brand-primary; /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYzlkYTJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjM2ViNDRhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOTA4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  background: -moz-linear-gradient(45deg,  #c9da2a 0%, #3eb44a 50%, #00908c 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#c9da2a), color-stop(50%,#3eb44a), color-stop(100%,#00908c)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* IE10+ */
-  background: linear-gradient(45deg,  #c9da2a 0%,#3eb44a 50%,#00908c 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9da2a', endColorstr='#00908c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+  background: -moz-linear-gradient(45deg, $gradient-dark 0%, $gradient-light 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $gradient-dark), color-stop(100%, $gradient-light)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg, $gradient-dark 0%, $gradient-light 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg, $gradient-dark 0%, $gradient-light 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $gradient-dark 0%, $gradient-light 100%); /* IE10+ */
+  background: linear-gradient(45deg, $gradient-dark 0%, $gradient-light 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-dark', endColorstr='$gradient-light',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 }
 @mixin grayscale-gradient-bg {
   background: #ffffff; /* Old browsers */
@@ -109,6 +110,7 @@ h1,h2,h3,h4,h5, .lead {
   font-weight: 300;
   border: none;
   &:hover {
+    background: $gradient-dark;
     @include smooth-trans;
   }
 }
@@ -125,10 +127,10 @@ h1,h2,h3,h4,h5, .lead {
   }
 }
 .text-gradient {
-  background: -webkit-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
-  background: -moz-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
-  background: -o-linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
-  background: linear-gradient(45deg, #00908c 0%, #3eb44a 50%, #c9da2a 100%);
+  background: -webkit-linear-gradient(45deg, $gradient-light 0%, $gradient-dark 100%);
+  background: -moz-linear-gradient(45deg, $gradient-light 0%, $gradient-dark 100%);
+  background: -o-linear-gradient(45deg, $gradient-light 0%, $gradient-dark 100%);
+  background: linear-gradient(45deg, $gradient-light 0%, $gradient-dark 100%);
   @include text-gradient();
 }
 // Disable text gradient on FF & IE
@@ -224,7 +226,7 @@ h1,h2,h3,h4,h5, .lead {
         background: #CCC;
       }
       &.scenario-current:after {
-        border: 7px solid #00908c;
+        border: 7px solid $gradient-light;
         margin-left: -2px;
         margin-top: -2px;
       }
