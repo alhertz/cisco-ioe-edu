@@ -346,7 +346,7 @@ h1,h2,h3,h4,h5, .lead {
     display: none;
   }
   .content {
-    padding-top: 4.0em;
+    margin-top: 20%;
     .secondary-content {
       padding-top: 2.0em;
       .lead.text-muted {
@@ -437,6 +437,11 @@ h1,h2,h3,h4,h5, .lead {
         box-shadow: none;
         width: 50px;
         margin-top: 10px;
+      }
+      .fa {
+        color: #FFF;
+        font-size: 60px;
+        line-height: 70px;
       }
     }
     .col-md-5 {
@@ -563,7 +568,7 @@ h1,h2,h3,h4,h5, .lead {
   background-size: 47px auto;
   height: 126px;
   width: 100%;
-  max-width: 160px;
+  max-width: 170px;
   text-align: center;
   padding-top: 15px;
   background-position: center bottom;
@@ -598,7 +603,7 @@ h1,h2,h3,h4,h5, .lead {
 // Share / Signoff Slide
 #scenario-7 {
   height: auto;
-  padding: 4.0em 0 15.0em 0;
+  padding: 10.0em 0 15.0em 0;
   background-image: url("../images/scenario-6-bg.jpg");
   background-repeat: no-repeat;
   background-position: top center;
