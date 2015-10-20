@@ -19,7 +19,6 @@ $gradient-dark: #0067ab;
 @import 'sass-bootstrap/lib/buttons';
 
 // Components
-@import 'sass-bootstrap/lib/navbar';
 @import 'sass-bootstrap/lib/thumbnails';
 @import 'sass-bootstrap/lib/close';
 
@@ -338,9 +337,13 @@ h1,h2,h3,h4,h5, .lead {
 }
 // Scenario One
 #scenario-1 {
-  color: #FFF; 
+  color: #FFF;
   padding-top: $navbar-height;
   @include color-gradient-bg();
+  h2 {
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
   .content,
   .secondary-content {
     display: none;
@@ -370,13 +373,14 @@ h1,h2,h3,h4,h5, .lead {
       text-align: center;
       h2 {
         font-size: 1.5em;
-      }
-      img {
-        display: none;
+        line-height: 1.5;
+        margin-bottom: 15px;
       }
       .img-circle {
         margin: 0 auto;
         border: 3px solid $body-bg;
+        max-width: 100px;
+        margin-bottom: 15px;
       }
     }
   }
